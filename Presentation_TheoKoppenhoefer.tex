@@ -201,7 +201,7 @@
   \begin{proposition}[Well-posedness, {\autocite[Proposition 4.1]{Otto1998}}]
     Let $\rho_{k-1}\in K$ then there exists a unique minimiser over $K$ of
     \begin{align*}
-      \rho\mapsto\frac{1}{2}d\brk*{\rho^{k-1},\rho}^2+\tau F\brk*{\rho}\,.
+      \rho\mapsto\frac{1}{2}d^2\brk*{\rho^{k-1},\rho}+\tau F\brk*{\rho}\,.
     \end{align*}
   \end{proposition}
   % \begin{proofs}
@@ -286,7 +286,7 @@
   \begin{proposition}[A priori estimates, {\autocite[Theorem 5.1]{Otto1998}}]
     Let $\rho^0\in K$ with $F\brk*{\rho^0}<\infty$.
     Fix an end time $t_1\in T$.
-    For all $k_1\tau\leq t_1$ one has 
+    For all $k_1\tau\leq t_1$ and $t\leq t_1$ one has 
     % \begin{enumerate}
     %   \item $M\brk*{\rho_\tau}=\int_X\abs*{x}^2\rho_\tau\lesssim 1$\label{en:aPriori_x2}
     %   \item $\int_X \brk*{\rho_\tau\log\brk*{\rho_\tau}}^+\lesssim1$ where $f^+\coloneqq\max\brk*{f,0}$. \label{en:aPriori_log}
@@ -294,9 +294,9 @@
     %   \item $\sum_{k\leq t_1/\tau}d\brk*{\rho_\tau^{k-1},\rho_\tau^k}^2\lesssim \tau$.
     % \end{enumerate}
     \begin{align*}
-      M\brk*{\rho_\tau}=\int_X\abs*{x}^2\rho_\tau&\lesssim 1 &  
-      \int_X \brk*{\rho_\tau\log\brk*{\rho_\tau}}^+ &\lesssim 1 \\
-      E\brk*{\rho_\tau}=\int_X\Psi\rho_\tau &\lesssim 1 &
+      M\brk*{\rho_\tau}\big|_{t}=\int_X\abs*{x}^2\rho_\tau\big|_{t}&\lesssim 1 &  
+      \int_X \brk*{\rho_\tau\log\brk*{\rho_\tau}}^+\big|_{t} &\lesssim 1 \\
+      E\brk*{\rho_\tau}\big|_{t}=\int_X\Psi\rho_\tau\big|_{t} &\lesssim 1 &
       \sum_{k\leq t_1/\tau}d\brk*{\rho_\tau^{k-1},\rho_\tau^k}^2 &\lesssim \tau\,.
     \end{align*}
     where $f^+\coloneqq\max\brk*{f,0}$.
@@ -390,7 +390,7 @@
     We perturb
     \begin{align*}
       \\
-      0&\annotateEqn[offsetVert=0.3]{$\rho^k\text{ minimises }\rho\mapsto\frac{1}{2\tau}d^2\brk*{\rho^{k-1},\rho}+F\brk*{\rho}$}{\leq}
+      0&\annotateEqn[offsetVert=0.3]{$\rho^k\text{ minimises }\frac{1}{2\tau}d^2\brk*{\rho^{k-1},\cdot}+F$}{\leq}
       \frac{1}{s}\brk*{\brk*{\frac{1}{2\tau}d^2\brk*{\rho^{k-1},\rho_s}+F\brk*{\rho_s}}-\brk*{\frac{1}{2\tau}d^2\brk*{\rho^{k-1},\rho^k}+F\brk*{\rho^k}}} \\ \\
       &\annotateEqn[offsetVert=0.3]{$F=E+S$}{=}\underbrace{\frac{1}{2\tau s}\brk*{d^2\brk*{\rho^{k-1},\rho_s}-d^2\brk*{\rho^{k-1},\rho^k}}}_{\eqqcolon{\cyan\brk*{I}^k_s}}+ \\
       &\qquad+\underbrace{\frac{1}{s}\brk*{E\brk*{\rho_s}-E\brk*{\rho^k}}}_{\eqqcolon{\magenta\brk*{II}^k_s}}
